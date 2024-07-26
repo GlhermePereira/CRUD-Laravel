@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Create Product</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
 <div class="container">
-	<a href="/products">{{__('Products')}}</a>
 	<h1>{{__('Create Product')}}</h1>
 
 	<form method="POST" action="{{ route('products.store')}}">
@@ -46,23 +39,4 @@
 			<button type="submit" class="btn btn-primary">{{__('Create')}}</button>
 	</form>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-    $(document).ready(function($) {
-        // Start Show Validation Error messages==========================================================
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                $.notify("{{ $error }}", "error");
-            @endforeach
-        @endif
-        // End Show Validation Error messages==========================================================
-
-        // Start Show Success message ====================================================================
-        @if (session('success'))
-            $.notify("{{ session('success') }}", "success");
-        @endif
-        // End Show Success message ====================================================================
-    });
-</script>
-</body>
-</html>
+@endsection
