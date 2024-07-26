@@ -36,3 +36,80 @@ Estrutura de Diretórios
     /app/Http/Controllers: Contém os controladores para autenticação e gerenciamento de produtos.
     /app/Models: Contém os modelos Eloquent para usuários e produtos.
     /routes/web.php: Contém as rotas para autenticação e operações CRUD de produtos.
+
+    Instalação
+
+Siga as instruções abaixo para configurar o projeto em sua máquina local.
+Pré-requisitos
+
+    PHP >= 7.3
+    Composer
+    Laravel >= 8.x
+    MySQL
+
+Passos para Instalação
+
+    Clone o repositório:
+
+    sh
+
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+
+Instale as dependências do Composer:
+
+sh
+
+composer install
+
+Copie o arquivo .env.example para .env:
+
+sh
+
+cp .env.example .env
+
+Configure o arquivo .env com as credenciais do banco de dados:
+
+env
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nome_do_banco_de_dados
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+
+Gere a chave da aplicação:
+
+sh
+
+php artisan key:generate
+
+Execute as migrações para criar as tabelas no banco de dados:
+
+sh
+
+php artisan migrate
+
+(Opcional) Popule a tabela de produtos com dados de exemplo:
+
+sh
+
+php artisan db:seed --class=ProductSeeder
+
+Instale o Laravel Breeze ou Laravel UI para a autenticação:
+
+sh
+
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm install && npm run dev
+php artisan migrate
+
+Inicie o servidor de desenvolvimento:
+
+sh
+
+php artisan serve
+
+Acesse a aplicação no seu navegador em http://localhost:8000.
